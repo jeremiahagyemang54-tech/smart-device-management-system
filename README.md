@@ -199,3 +199,94 @@ while is_running:
     else:
         print("Invalid Selection!!")
         print("Please pick from 1 to 7")
+
+
+
+        while is_running:
+    print("** OPTIONS **")###
+    print("1. Display Device Information")
+    print("2. Turn Device On")
+    print("3. Turn Device Off")
+    print("4. Read Temperature")
+    print("5. Adjust Brightness")
+    print("6. Start Recording")
+    print("7. Exit")
+
+    try:
+        option = int(input("Type an option number (1-7): "))
+    except ValueError:
+        print("Input error!")###
+        print("enter a number between 1 and 7")
+        continue
+
+
+    if option == 1:
+        my_sensor.display_info()
+        my_light.display_info()
+        my_cam.display_info()
+
+    elif option == 2:
+        print("Which device would you like to turn on?")
+        print("1. Thermometer 2. Light 3. Camera")
+        device_option = int(input("Choose an option(1-3): "))
+
+        if device_option == 1:
+            my_sensor.turn_on()
+        elif device_option == 2:
+            my_light.turn_on()
+        elif device_option == 3:
+            my_cam.turn_on()
+        else:
+            print("Invalid option")
+
+    elif option == 3:
+        print("Which device would you like to turn off?")
+        print("1. Thermostat 2. Light 3. Camera")
+        device_option = int(input("Choose an option(1-3): "))
+
+        if device_option == 1:
+            my_sensor.turn_off()
+        elif device_option == 2:
+            my_light.turn_off()
+        elif device_option == 3:
+            my_cam.turn_off()
+        else:
+            print("Selection not part")
+
+    elif option == 4:
+        my_sensor.read_temperature()
+
+    elif option == 5:
+        print("Select brightness adjustment direction:")
+        print("1. Increase Brightness 2. Decrease Brightness")
+
+        brightness_option = int(input("Enter 1 for increae or 2 for decrease: "))
+        amount = int(input("Enter brightness change amount: "))###
+        if brightness_option == 1:
+            my_light.increase_brightness(amount)
+        elif brightness_option == 2:
+            my_light.decrease_brightness(amount)
+        else:
+            print("Invalid option")
+
+    elif option == 6:
+        rec_option = str(input("Activate recording? (Yes / No): "))
+        if rec_option.capitalize() == "Yes":
+            my_cam.start_recording()
+
+    elif option == 7:
+        is_running = False
+        print("Shutting down Panel...")
+
+    else:
+        print("Invalid Selection!!")
+        print("Please pick from 1 to 7")
+
+       Introduction of project
+This project is called “Smart Home Control panel” which is designed to control and monitoring of devices in a home
+
+Summary of the task
+This program is a Smart Home Control Panel built using Python Object-Oriented Programming (OOP).
+Ensure you have Python 3 installed on your workstation.
+
+ Clone the repository:
